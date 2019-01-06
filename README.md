@@ -1,4 +1,4 @@
-# Grover
+# Grover's algorithm
 
 ## The problem this algorithm is trying to aim.  
 
@@ -75,4 +75,7 @@ for k in range(bn):
  ![grover_00_sim](https://user-images.githubusercontent.com/45162150/50737731-fe31d980-120f-11e9-9fc8-26de111c875d.png)
  
  And this is the result on the real device(ibmq_20_tokyo).  
+ ![grover_00_tokyo](https://user-images.githubusercontent.com/45162150/50737946-cc217700-1211-11e9-9d64-d05df79eb44c.png)  
+
+You can find the cases to maximize not only <img src="https://latex.codecogs.com/gif.latex?|00\rangle" title="|00\rangle" />,but also <img src="https://latex.codecogs.com/gif.latex?|01\rangle" title="|01\rangle" />,<img src="https://latex.codecogs.com/gif.latex?|10\rangle" title="|10\rangle" /> and <img src="https://latex.codecogs.com/gif.latex?|11\rangle" title="|11\rangle" />.  So,feel free to try them on qiskit.
  
