@@ -17,52 +17,18 @@ So, I got 4 choices.
 ### 2. Put the phase oracle,which flips the phase of your desired choice.
 
 After you create the superposition, you have to put something called the phase oracle.  
-The following codes is those of the phase oracle for <img src="https://latex.codecogs.com/gif.latex?|00\rangle" title="|00\rangle" />.
-  
-`  
+The following codes is those of the phase oracle for <img src="https://latex.codecogs.com/gif.latex?|00\rangle" title="|00\rangle" />.  
+```
 def oracle0(qci,n,q1,q2):
-    for i in range(n):
-        qci.s(q[i])
-    qci.cz(q[q1],q[q2])
-    for i in range(n):
-        qci.s(q[i])  
- `  
- In order to make sure that the phase of <img src="https://latex.codecogs.com/gif.latex?|00\rangle" title="|00\rangle" />, you have to write the following code after you measure the quantum states.  
- 
- `
-backend = BasicAer.get_backend('statevector_simulator')
-job = execute(qc,backend)
-result = job.result()
-outputstate = result.get_statevector(qc, decimals=3)
-print(outputstate)
-`  
-The outcome would be [ -0.5+0.j  0.5+0.j  0.5+0.j 0.5+0.j]  
-  
-### 3. Subtract probability of the phase from their average, and add it to the average again.  
 
-First, the probability of getting each states are 50% and the one for the desired choice is just flipped, which is -50%.
-
-Then, I substract it from the average of all the probability((50+50+50-50)/4 = 25%), so the outcome would be 75%.  
-After that, I should add that value to the average again, which would end up to be 100%.
-
-You can realize this by putting the following codes.  
-'bn is the number of qubits, which is 2 in this case.
-for j in range(bn):
-    qc.h(q[j])
-    qc.x(q[j])
-oracle0(qc,2,0,1)
-for k in range(bn):
-    qc.x(q[k])
-    qc.h(q[k])
- `  
- 
- ### 4. Measure the quantum states.  
- 
- This is the result on the QASM simulator.  
- ![grover_00_sim](https://user-images.githubusercontent.com/45162150/50737731-fe31d980-120f-11e9-9fc8-26de111c875d.png)
- 
- And 
-        
-
-
+    for i in range(n):    
+    
+      qci.s(q[i])     
+      
+    qci.cz(q[q1],q[q2]) 
+    
+    for i in range(n):  
+    
+        qci.s(q[i])    
+ ```  
  
