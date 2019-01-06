@@ -58,7 +58,10 @@ for k in range(bn):
  
  ### 4. Measure the quantum states.  
  
- This is the result on the QASM simulator.
+ This is the result on the QASM simulator.  
+ ![grover_00_sim](https://user-images.githubusercontent.com/45162150/50737731-fe31d980-120f-11e9-9fc8-26de111c875d.png)
+ 
+ And 
         
 
 
