@@ -7,7 +7,7 @@ from qiskit.qasm import pi
 from qiskit.tools.visualization import plot_histogram, circuit_drawer
 import numpy as np
 
-APItoken = "Replace me "
+APItoken = "Replace me"
 url = "Replace me"
 IBMQ.enable_account(APItoken, url)
 
